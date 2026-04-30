@@ -20,6 +20,8 @@ buttons.forEach((btn) => {
   });
 });
 
+// // ===== CHATBOT (FIXED VERSION) =====
+
 // FAQ DATA
 const faq = [
   { question: "hello", answer: "Hi there! How can I help you?" },
@@ -29,12 +31,15 @@ const faq = [
   { question: "contact", answer: "Scroll down to the contact section to reach me." }
 ];
 
-// SEND MESSAGE
-function sendMessage() {
+// MAKE FUNCTION GLOBAL (THIS IS THE FIX)
+window.sendMessage = function () {
   const input = document.getElementById("user-input");
   const chatBox = document.getElementById("chat-box");
 
-  if (!input || !chatBox) return; // prevents errors
+  if (!input || !chatBox) {
+    console.log("Chatbot elements not found");
+    return;
+  }
 
   let text = input.value.trim().toLowerCase();
   if (text === "") return;
@@ -48,9 +53,9 @@ function sendMessage() {
   }, 300);
 
   input.value = "";
-}
+};
 
-// ADD MESSAGE TO SCREEN
+// ADD MESSAGE
 function addMessage(text, sender) {
   const chatBox = document.getElementById("chat-box");
 
@@ -62,7 +67,7 @@ function addMessage(text, sender) {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// IMPROVED MATCHING LOGIC
+// RESPONSE LOGIC
 function getResponse(input) {
   input = input.toLowerCase();
 
@@ -75,16 +80,15 @@ function getResponse(input) {
   return "Sorry, I don't understand that yet.";
 }
 
-// ENTER KEY (SAFE VERSION)
+// ENTER KEY SUPPORT (ROBUST)
 document.addEventListener("DOMContentLoaded", function () {
-  const input = document.getElementById("user-input");
-
-  if (input) {
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      const active = document.activeElement;
+      if (active && active.id === "user-input") {
         e.preventDefault();
-        sendMessage();
+        window.sendMessage();
       }
-    });
-  }
+    }
+  });
 });
