@@ -82,6 +82,13 @@ function getResponse(input) {
 
 // ENTER KEY SUPPORT (ROBUST)
 document.addEventListener("DOMContentLoaded", function () {
+  const chatBox = document.getElementById("chat-box");
+if (chatBox) {
+  let welcome = document.createElement("div");
+  welcome.className = "message bot";
+  welcome.textContent = "Hi! You can ask me about my skills, experience, or contact info.";
+  chatBox.appendChild(welcome);
+                                   }
   document.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       const active = document.activeElement;
