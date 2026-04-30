@@ -172,6 +172,20 @@
   <p>Location: Lagos, Nigeria</p>
 </div>
 
+  <button class="toggle-btn">Ask Me a Question</button>
+<div class="content">
+
+  <div class="chatbot-box">
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Ask something..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+</div>
+
 </div>
 
 </main>
@@ -179,30 +193,6 @@
 <footer>
   <p>© 2026 Lordson Anson | Raphsody Media</p>
 </footer>
-<!-- Chatbot Widget -->
-<iframe src="chatbot/chatbot.html" id="chatbot-frame"></iframe>
-
-<style>
-#chatbot-frame {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  height: 420px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  z-index: 9999;
-}
-</style>
-  <style>
-@media (max-width: 600px) {
-  #chatbot-frame {
-    width: 90%;
-    right: 5%;
-    height: 400px;
-  }
-}
-  </style>
+  
 </body>
 </html>
