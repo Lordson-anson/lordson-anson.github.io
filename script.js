@@ -25,53 +25,66 @@ const faq = [
   { question: "hello", answer: "Hi there! How can I help you?" },
   { question: "who are you", answer: "I am Lordson's chatbot assistant." },
   { question: "what do you do", answer: "I answer predefined questions." },
-  { question: "skills", answer: "Sales, AI, Scriptwriting, Web Development, Teaching." },
+  { question: "skills", answer: "I have skills in Sales, AI, Scriptwriting, Web Development, and Teaching." },
   { question: "contact", answer: "Scroll down to the contact section to reach me." }
 ];
 
 // SEND MESSAGE
 function sendMessage() {
-  let input = document.getElementById("user-input");
-  let text = input.value.toLowerCase().trim();
+  const input = document.getElementById("user-input");
+  const chatBox = document.getElementById("chat-box");
 
-  if (!text) return;
+  if (!input || !chatBox) return; // prevents errors
 
-  displayMessage(text, "user");
+  let text = input.value.trim().toLowerCase();
+  if (text === "") return;
+
+  addMessage(text, "user");
 
   let response = getResponse(text);
 
   setTimeout(() => {
-    displayMessage(response, "bot");
-  }, 400);
+    addMessage(response, "bot");
+  }, 300);
 
   input.value = "";
 }
 
-// DISPLAY MESSAGE
-function displayMessage(text, sender) {
-  let chatBox = document.getElementById("chat-box");
+// ADD MESSAGE TO SCREEN
+function addMessage(text, sender) {
+  const chatBox = document.getElementById("chat-box");
 
   let msg = document.createElement("div");
-  msg.classList.add("message", sender);
-  msg.innerText = text;
+  msg.className = "message " + sender;
+  msg.textContent = text;
 
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// RESPONSE LOGIC
-function getResponse(text) {
+// IMPROVED MATCHING LOGIC
+function getResponse(input) {
+  input = input.toLowerCase();
+
   for (let i = 0; i < faq.length; i++) {
-    if (text.includes(faq[i].question)) {
+    if (input.includes(faq[i].question)) {
       return faq[i].answer;
     }
   }
-  return "I don't have an answer for that yet.";
+
+  return "Sorry, I don't understand that yet.";
 }
 
-// ENTER KEY SUPPORT
-document.addEventListener("keypress", function(e) {
-  if (e.key === "Enter") {
-    sendMessage();
+// ENTER KEY (SAFE VERSION)
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("user-input");
+
+  if (input) {
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
   }
 });
