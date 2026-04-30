@@ -19,3 +19,59 @@ buttons.forEach((btn) => {
     }
   });
 });
+
+// FAQ DATA
+const faq = [
+  { question: "hello", answer: "Hi there! How can I help you?" },
+  { question: "who are you", answer: "I am Lordson's chatbot assistant." },
+  { question: "what do you do", answer: "I answer predefined questions." },
+  { question: "skills", answer: "Sales, AI, Scriptwriting, Web Development, Teaching." },
+  { question: "contact", answer: "Scroll down to the contact section to reach me." }
+];
+
+// SEND MESSAGE
+function sendMessage() {
+  let input = document.getElementById("user-input");
+  let text = input.value.toLowerCase().trim();
+
+  if (!text) return;
+
+  displayMessage(text, "user");
+
+  let response = getResponse(text);
+
+  setTimeout(() => {
+    displayMessage(response, "bot");
+  }, 400);
+
+  input.value = "";
+}
+
+// DISPLAY MESSAGE
+function displayMessage(text, sender) {
+  let chatBox = document.getElementById("chat-box");
+
+  let msg = document.createElement("div");
+  msg.classList.add("message", sender);
+  msg.innerText = text;
+
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// RESPONSE LOGIC
+function getResponse(text) {
+  for (let i = 0; i < faq.length; i++) {
+    if (text.includes(faq[i].question)) {
+      return faq[i].answer;
+    }
+  }
+  return "I don't have an answer for that yet.";
+}
+
+// ENTER KEY SUPPORT
+document.addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
