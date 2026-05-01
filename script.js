@@ -22,14 +22,7 @@ buttons.forEach((btn) => {
 
 // // ===== CHATBOT (FIXED VERSION) =====
 
-// FAQ DATA
-const faq = [
-  { question: "hello", answer: "Hi there! How can I help you?" },
-  { question: "who are you", answer: "I am Lordson's chatbot assistant." },
-  { question: "what do you do", answer: "I answer predefined questions." },
-  { question: "skills", answer: "I have skills in Sales, AI, Scriptwriting, Web Development, and Teaching." },
-  { question: "contact", answer: "Scroll down to the contact section to reach me." }
-];
+
 
 // MAKE FUNCTION GLOBAL (THIS IS THE FIX)
 window.sendMessage = function () {
