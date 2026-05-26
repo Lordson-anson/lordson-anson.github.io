@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Message Sent</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            width:100%;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#050816;
+            font-family:'Poppins',sans-serif;
+            overflow:hidden;
+            position:relative;
+        }
+
+        .thankyou-container{
+            text-align:center;
+            z-index:2;
+            padding:40px;
+        }
+
+        .thankyou-container h1{
+            font-size:4rem;
+            color:white;
+            margin-bottom:20px;
+        }
+
+        .thankyou-container h1 span{
+            color:#ff7b00;
+        }
+
+        .thankyou-container p{
+            color:#aaa;
+            max-width:600px;
+            line-height:1.8;
+            margin:auto;
+            margin-bottom:40px;
+        }
+
+        .back-btn{
+            display:inline-block;
+            padding:16px 36px;
+            border-radius:14px;
+            background:linear-gradient(90deg,#ff7b00,#ff00aa);
+            color:white;
+            text-decoration:none;
+            transition:0.4s;
+        }
+
+        .back-btn:hover{
+            transform:translateY(-5px);
+        }
+
+        .glow{
+            position:absolute;
+            width:500px;
+            height:500px;
+            background:linear-gradient(#ff7b00,#ff00aa);
+            filter:blur(140px);
+            opacity:0.3;
+            border-radius:50%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="glow"></div>
+
+    <div class="thankyou-container">
+
+        <h1>
+            Message <span>Sent.</span>
+        </h1>
+
+        <p>
+            Thank you for reaching out to Lordson Anson.
+            Your message has been received successfully.
+            I’ll get back to you as soon as possible.
+        </p>
+
+        <a href="index.html" class="back-btn">
+            Back To Portfolio
+        </a>
+
+    </div>
+
+</body>
+
+</html>
