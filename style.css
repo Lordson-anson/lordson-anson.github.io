@@ -988,6 +988,15 @@ footer p{
         text-align:center;
     }
 
+     .hero-container{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+    margin:auto;
+    text-align:left;
+}
+
     .hero-content{
         max-width:100%;
         margin:auto;
