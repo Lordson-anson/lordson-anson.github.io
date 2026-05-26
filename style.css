@@ -15,7 +15,8 @@ body{
 /* ================= GLOBAL ================= */
 
 section{
-    padding:120px 8%;
+    padding:90px 8%;
+    position:relative;
 }
 
 .section-title{
@@ -101,7 +102,8 @@ nav a:hover{
     position:relative;
     min-height:100vh;
     overflow:hidden;
-    padding:0 8%;
+    padding:
+        120px 8% 70px;
     display:flex;
     align-items:center;
 }
@@ -982,15 +984,6 @@ footer p{
 
 }
 
-@media(max-width:768px){
-
-    .hero{
-        padding-top:120px;
-        padding-bottom:80px;
-    }
-
-}
-
 /* ================= CUSTOM CURSOR ================= */
 
 body{
@@ -1061,12 +1054,7 @@ img{
 
 /* ================= MOBILE HERO FIX ================= */
 
-@media(max-width:900px){
 
-    .hero{
-        padding-top:140px;
-        padding-bottom:80px;
-    }
 
     .hero-container{
         grid-template-columns:1fr;
@@ -1179,6 +1167,122 @@ img{
 
     .desktop-notice{
         display:none;
+    }
+
+}
+
+/* ================= GLOBAL SPACING FIX ================= */
+
+h1,h2,h3,h4,h5,h6,p{
+    margin-top:0;
+}
+
+/* REMOVE EXCESSIVE SECTION GAPS */
+
+.about,
+.skills,
+.services,
+.projects,
+.experience,
+.education,
+.certifications,
+.achievements,
+.testimonials,
+.contact{
+
+    margin-top:0;
+    margin-bottom:0;
+
+}
+
+/* BETTER MOBILE + DESKTOP MODE SPACING */
+
+@media(max-width:1024px){
+
+    section{
+        padding:70px 6%;
+    }
+
+    .hero{
+        padding:
+            120px 6% 60px;
+        min-height:auto;
+    }
+
+    .hero-container{
+        gap:40px;
+    }
+
+}
+
+/* EXTRA FIX FOR MOBILE DESKTOP VIEW */
+
+@media(max-width:768px){
+
+    section{
+        padding:60px 5%;
+    }
+
+    .hero{
+        padding:
+            110px 5% 50px;
+    }
+
+    .hero-content h1{
+        margin-bottom:18px;
+    }
+
+    .hero-content p{
+        margin-bottom:20px;
+    }
+
+}
+
+
+/* ================= FINAL HERO SPACING FIX ================= */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+    padding:110px 8% 60px;
+    display:flex;
+    align-items:center;
+}
+
+section{
+    padding:70px 8%;
+}
+
+/* TABLETS */
+
+@media(max-width:1024px){
+
+    .hero{
+        min-height:auto;
+        padding:110px 6% 50px;
+    }
+
+    section{
+        padding:60px 6%;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero{
+        padding:100px 5% 40px;
+    }
+
+    section{
+        padding:50px 5%;
+    }
+
+    .hero-container{
+        gap:35px;
     }
 
 }
