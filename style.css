@@ -782,7 +782,8 @@ footer p{
     justify-content:center;
     gap:6px;
     cursor:pointer;
-    z-index:2000;
+    z-index:100000;
+    position:relative;
 }
 
 .menu-toggle span{
@@ -827,7 +828,7 @@ footer p{
         align-items:center;
         gap:35px;
         transition:0.5s;
-        z-index:1500;
+        z-index:99999;
         box-shadow:-10px 0 40px rgba(0,0,0,0.4);
     }
 
@@ -949,9 +950,12 @@ footer p{
 
 .social-icons{
     position:fixed;
-    left:30px;
+    left:20px;
     top:50%;
     transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
     z-index:9999;
 }
 
@@ -1043,6 +1047,137 @@ body{
 
     .cursor-dot,
     .cursor-outline{
+        display:none;
+    }
+
+}
+
+/* ================= SEO PERFORMANCE ================= */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ================= MOBILE HERO FIX ================= */
+
+@media(max-width:900px){
+
+    .hero{
+        padding-top:140px;
+        padding-bottom:80px;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:50px;
+    }
+
+    .hero-content{
+        max-width:100%;
+        padding-right:0;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .hero-image{
+        padding-left:0;
+    }
+
+    .hero-image-container{
+        width:100%;
+        max-width:360px;
+        height:auto;
+        aspect-ratio:4/5;
+        margin:auto;
+    }
+
+    .profile-image{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+        line-height:1.2;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .social-icons{
+        left:50%;
+        bottom:20px;
+        top:auto;
+        transform:translateX(-50%);
+        flex-direction:row;
+        background:rgba(5,8,22,0.8);
+        padding:12px 18px;
+        border-radius:40px;
+        backdrop-filter:blur(10px);
+    }
+
+}
+
+
+/* ================= DESKTOP NOTICE ================= */
+
+.desktop-notice{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(5,8,22,0.92);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:14px 22px;
+    border-radius:40px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    z-index:999999;
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:noticeFade 1s ease;
+}
+
+.desktop-notice p{
+    color:white;
+    font-size:0.95rem;
+}
+
+.close-notice{
+    background:none;
+    border:none;
+    color:#ff7b00;
+    font-size:1rem;
+    cursor:pointer;
+}
+
+@keyframes noticeFade{
+
+    from{
+        opacity:0;
+        transform:translate(-50%,-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translate(-50%,0);
+    }
+
+}
+
+/* SHOW ONLY ON MOBILE */
+
+@media(min-width:769px){
+
+    .desktop-notice{
         display:none;
     }
 
