@@ -390,3 +390,18 @@ hoverElements.forEach((element) => {
     });
 
 });
+
+
+// ================= DESKTOP NOTICE =================
+
+const desktopNotice =
+document.querySelector(".desktop-notice");
+
+const closeNotice =
+document.querySelector(".close-notice");
+
+closeNotice.addEventListener("click", () => {
+
+    desktopNotice.style.display = "none";
+
+});
