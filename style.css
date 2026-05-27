@@ -1069,66 +1069,6 @@ footer p{
 
 }
 
-/* ================= CUSTOM CURSOR ================= */
-
-body{
-    cursor:none;
-}
-
-.cursor-dot{
-    width:10px;
-    height:10px;
-    background:#ff7b00;
-    border-radius:50%;
-    position:fixed;
-    top:0;
-    left:0;
-    pointer-events:none;
-    z-index:999999;
-    transform:translate(-50%,-50%);
-}
-
-.cursor-outline{
-    width:40px;
-    height:40px;
-    border:2px solid rgba(255,123,0,0.5);
-    border-radius:50%;
-    position:fixed;
-    top:0;
-    left:0;
-    pointer-events:none;
-    z-index:999998;
-    transform:translate(-50%,-50%);
-    transition:
-    width 0.15s,
-    height 0.15s,
-    border 0.15s,
-    background 0.15s;
-}
-
-/* CURSOR HOVER EFFECT */
-
-.cursor-hover{
-    width:70px;
-    height:70px;
-    background:rgba(255,123,0,0.08);
-    border:2px solid #ff7b00;
-}
-
-/* DISABLE ON MOBILE */
-
-@media(max-width:768px){
-
-    body{
-        cursor:auto;
-    }
-
-    .cursor-dot,
-    .cursor-outline{
-        display:none;
-    }
-
-}
 
 /* ================= SEO PERFORMANCE ================= */
 
