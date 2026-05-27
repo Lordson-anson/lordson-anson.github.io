@@ -130,11 +130,13 @@ nav a:hover{
 
 @media(max-width:900px){
 
-    .hero-content p{
-        text-align:center;
-        margin-left:auto;
-        margin-right:auto;
-    }
+    .hero-content{
+    text-align:center;
+}
+
+.hero-content p{
+    margin:0 auto;
+}
 
 }
 
@@ -972,7 +974,7 @@ footer p{
 }
 
 .hero-image-container{
-    width:100px;
+    width:100%;
     max-width:420px;
     height:520px;
     border-radius:30px;
@@ -1133,65 +1135,6 @@ body{
 img{
     max-width:100%;
     display:block;
-}
-
-
-
-/* ================= DESKTOP NOTICE ================= */
-
-.desktop-notice{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:rgba(5,8,22,0.92);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:14px 22px;
-    border-radius:40px;
-    display:flex;
-    align-items:center;
-    gap:16px;
-    z-index:999999;
-    backdrop-filter:blur(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
-    animation:noticeFade 1s ease;
-}
-
-.desktop-notice p{
-    color:white;
-    font-size:0.95rem;
-}
-
-.close-notice{
-    background:none;
-    border:none;
-    color:#ff7b00;
-    font-size:1rem;
-    cursor:pointer;
-}
-
-@keyframes noticeFade{
-
-    from{
-        opacity:0;
-        transform:translate(-50%,-20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translate(-50%,0);
-    }
-
-}
-
-/* SHOW ONLY ON MOBILE */
-
-@media(min-width:769px){
-
-    .desktop-notice{
-        display:none;
-    }
-
 }
 
 /* ================= GLOBAL SPACING FIX ================= */
