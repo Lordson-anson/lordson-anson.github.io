@@ -810,28 +810,36 @@ footer p{
     transform:rotate(-45deg) translateY(-14px);
 }
 
-/* MOBILE MENU */
+/* ================= MOBILE MENU FIX ================= */
 
 @media(max-width:768px){
 
     .menu-toggle{
         display:flex;
+        width:38px;
+        height:38px;
+        z-index:100001;
+    }
+
+    .menu-toggle span{
+        height:3px;
     }
 
     .nav-menu{
         position:fixed;
         top:0;
         right:-100%;
-        width:280px;
+        width:240px;
         height:100vh;
         background:#0b1023;
+        display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
-        gap:35px;
-        transition:0.5s;
-        z-index:99999;
-        box-shadow:-10px 0 40px rgba(0,0,0,0.4);
+        gap:28px;
+        transition:0.4s ease;
+        z-index:100000;
+        box-shadow:-10px 0 40px rgba(0,0,0,0.5);
     }
 
     .nav-menu.active{
@@ -839,9 +847,20 @@ footer p{
     }
 
     .nav-menu a{
-        font-size:1.2rem;
+        font-size:1rem;
+        color:white;
     }
 
+    .hire-btn{
+        display:none;
+    }
+
+}
+
+/* PREVENT MENU HIDING */
+
+.navbar{
+    overflow:visible;
 }
 
 /* ================= LOADING SCREEN ================= */
